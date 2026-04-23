@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.parent {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr;
+}
+
+.child1 {
+  background-color: rgb(255, 0, 140);
+  border: 2px solid white;
+}
+.child2 {
+  background-color: blueviolet;
+  border: 2px solid white;
+}
+.child3 {
+  background-color: yellow;
+  border: 2px solid white;
+}
+.child4 {
+  background-color: violet;
+  border: 2px solid white;
+}
