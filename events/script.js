@@ -43,3 +43,40 @@
 // });
 
 //-------------------------------------------------------->
+// Change event - its used when we make changes in input, select or textarea
+
+// let sel = document.querySelector("select");
+// let h2 = document.querySelector("h2");
+
+// sel.addEventListener("change", (det) => {
+//   h2.textContent = `${det.target.value} selected`;
+// });
+//-------------------------------------------------------->
+//Keydown - when a key is pressed/clicked on the keyboard
+
+// let txt = document.querySelector("#txt");
+
+// window.addEventListener("keydown", (e) => {
+//   console.log(e);
+//   if (e.key === " ") {
+//     txt.textContent = "Spc";
+//   } else txt.textContent = e.key;
+// });
+//-------------------------------------------------------->
+//click events for file opening
+
+// let btn = document.querySelector("#btn");
+// let inp = document.querySelector("#inp");
+
+// btn.addEventListener("click", () => {
+//   inp.click();
+// });
+
+// inp.addEventListener("change", (del) => {
+//   // console.log(del.target.files[0].name);
+//   const file = del.target.files[0];
+//   if (file) {
+//     btn.textContent = file.name;
+//   }
+// });
+//-------------------------------------------------------->

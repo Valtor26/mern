@@ -4,6 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      /* h2 {
+        text-transform: capitalize;
+      } */
+      /*----------------------------*/
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      #main {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #222;
+        color: #555;
+        font-size: 7rem;
+      }
+      input {
+        display: none;
+      }
+      #btn {
+        padding: 12px 22px;
+        background-color: rgb(43, 185, 137);
+        color: white;
+        font-weight: 600;
+        border-radius: 5px;
+      }
+      #btn:hover {
+        background-color: rgb(9, 119, 83);
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
     <!-- <h1>Apple</h1> -->
@@ -23,6 +64,19 @@
     <!------------------------------------------>
     <!-- <input type="text" name="" id="" /> -->
     <!------------------------------------------>
+    <!-- <h2>Select your device</h2>
+    <select>
+      <option selected disabled>Choose your device</option>
+      <option value="iP12">iPhone 12</option>
+      <option value="iP13">iPhone 13</option>
+      <option value="iP14">iPhone 14</option>
+    </select> -->
+    <!------------------------------------------>
+    <div id="main">
+      <!-- <h1 id="txt"></h1> -->
+      <input type="file" id="inp" />
+      <div id="btn">Upload</div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
