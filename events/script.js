@@ -83,45 +83,72 @@
 // Form submit
 // preventDefault() ---> stops page from reloading when form is submitted
 
-let form = document.querySelector("form");
-let inputs = document.querySelectorAll("input");
-let body = document.querySelector("body");
+// let form = document.querySelector("form");
+// let inputs = document.querySelectorAll("input");
+// let body = document.querySelector("body");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+// form.addEventListener("submit", (e) => {
+//   e.preventDefault();
 
-  let card = document.createElement("div");
-  card.classList.add("card");
+//   let card = document.createElement("div");
+//   card.classList.add("card");
 
-  let profile = document.createElement("div");
-  profile.classList.add("profile");
+//   let profile = document.createElement("div");
+//   profile.classList.add("profile");
 
-  let img = document.createElement("img");
-  img.setAttribute(
-    "src",
-    "https://images.unsplash.com/photo-1773622597179-44ea0fecd5b4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D",
-  );
+//   let img = document.createElement("img");
+//   img.setAttribute(
+//     "src",
+//     "https://images.unsplash.com/photo-1773622597179-44ea0fecd5b4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D",
+//   );
 
-  let h3 = document.createElement("h3");
-  h3.textContent = inputs[0].value;
+//   let h3 = document.createElement("h3");
+//   h3.textContent = inputs[0].value;
 
-  let h5 = document.createElement("h5");
-  h5.textContent = inputs[1].value;
+//   let h5 = document.createElement("h5");
+//   h5.textContent = inputs[1].value;
 
-  let p = document.createElement("p");
-  p.textContent = "Software Engineer with internship experience";
+//   let p = document.createElement("p");
+//   p.textContent = "Software Engineer with internship experience";
 
-  profile.appendChild(img);
-  card.appendChild(profile);
-  card.appendChild(h3);
-  card.appendChild(h5);
-  card.appendChild(p);
+//   profile.appendChild(img);
+//   card.appendChild(profile);
+//   card.appendChild(h3);
+//   card.appendChild(h5);
+//   card.appendChild(p);
 
-  body.appendChild(card);
+//   body.appendChild(card);
 
-  inputs.forEach((val) => {
-    if (val.type != "submit") {
-      val.value = "";
-    }
-  });
-});
+//   inputs.forEach((val) => {
+//     if (val.type != "submit") {
+//       val.value = "";
+//     }
+//   });
+// });
+//-------------------------------------------------------->
+// Mouseover Event & Mousemove
+
+// let box = document.getElementById("abcd");
+
+// box.addEventListener("mouseover", () => {
+//   box.style.backgroundColor = "red";
+// });
+
+// box.addEventListener("mouseout", () => {
+//   box.style.backgroundColor = "rgb(0, 255, 183)";
+// });
+
+//mousemove : whenever your mouse moves an event occurs
+
+// let box = document.getElementById("abcd");
+
+// window.addEventListener("mousemove", (evt) => {
+//   box.style.top = evt.clientY + "px";
+//   box.style.left = evt.clientX + "px";
+// });
+
+// object: in above code block, evt is known as object
+// target: target is the element on which we click or do any action and it leads to an event
+//type: it tells the type of event occurred
+
+//-------------------------------------------------------->
