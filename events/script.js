@@ -152,3 +152,40 @@
 //type: it tells the type of event occurred
 
 //-------------------------------------------------------->
+// Event bubling: When an event happens on an element, it first runs on that element, and then propagates (bubbles up) to its parent, then grandparent, and so on up to the root.
+
+// let parent = document.querySelector("#parent");
+
+// let child = document.querySelector("#child");
+
+// parent.addEventListener("click", () => {
+//   console.log("Parent Clicked");
+// });
+
+// child.addEventListener("click", () => {
+//   console.log("Child clicked");
+// });
+//-------------------------------------------------------->
+// let ul = document.querySelector("ul");
+
+// ul.addEventListener("click", (e) => {
+//   e.target.classList.toggle("lt");
+// });
+//-------------------------------------------------------->
+// Event Capturing: Event capturing is a process where an event propagates from the parent element to the target element, moving from top to bottom in the DOM tree. (reverse of bubbling)
+
+// let parent = document.querySelector("#parent");
+
+// let child = document.querySelector("#child");
+
+// parent.addEventListener(
+//   "click",
+//   () => {
+//     console.log("Parent clicked");
+//   },
+//   true, // true enables event capturing
+// );
+
+// child.addEventListener("click", () => {
+//   console.log("Child clicked");
+// });
