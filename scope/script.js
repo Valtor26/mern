@@ -10,5 +10,108 @@
 
 // console.log(a); //script.js:11 Uncaught ReferenceError: a is not defined
 // at script.js:11:13
+//-------------------------------------->
 
+// Lexical scope & Dynamic scope
 
+// 1. Lexical Scoping (Static Scoping) in JavaScript
+
+// Lexical scoping means scope is determined by where variables/functions are written in the code (their position).
+
+// In JavaScript, lexical scoping is used, not dynamic scoping.
+
+// Example:
+
+// let a = 10;
+
+// function outer() {
+//   let b = 20;
+
+//   function inner() {
+//     console.log(a);
+//     console.log(b);
+//   }
+
+//   inner();
+// }
+
+// outer();
+
+// Output:
+
+// 10
+// 20
+
+// Why?
+
+// Because inner() can access variables from its parent scope (outer) and global scope.
+
+// JS checks variables like this:
+
+// Current scope
+// ↓
+// Parent scope
+// ↓
+// Global scope
+
+// This is called the scope chain.
+
+// Important Point:
+
+// The scope depends on where the function is written, not where it is called.
+
+// Example:
+
+// let name = "Global";
+
+// function show() {
+//   console.log(name);
+// }
+
+// function test() {
+//   let name = "Local";
+//   show();
+// }
+
+// test();
+
+// Output:
+
+// Global
+
+// Why?
+
+// Because show() was written in global scope, so it looks for name there.
+
+// 2. Dynamic Scoping
+
+// Dynamic scoping means scope is decided based on where the function is called.
+
+// JavaScript does NOT use dynamic scoping.
+
+// If JS had dynamic scoping:
+
+// let name = "Global";
+
+// function show() {
+//   console.log(name);
+// }
+
+// function test() {
+//   let name = "Local";
+//   show();
+// }
+
+// test();
+
+// Output would be:
+
+// Local
+
+// because show() was called inside test().
+
+// But in JavaScript the actual output is:
+
+// Global
+
+// because JS uses lexical scoping.
