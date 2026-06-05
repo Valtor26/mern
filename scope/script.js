@@ -115,3 +115,36 @@
 // Global
 
 // because JS uses lexical scoping.
+
+//---------------------------------------->
+// closures: function that returns a function and the returning function should be using the variables from parent function
+
+// function abcd() {
+//   let x = 10;
+//   return function () {
+//     x = x + 1;
+//     console.log(x);
+//   };
+// }
+
+// let ans = abcd();
+
+// its true that whenever a function ends all its member functions and variables should also be destroyed, but when its closure js creates a backlink (remembers it) for all the func and varibles of the parent function in a memory space called [[environment]]
+
+// for every parent function call a new [[enviroment]] is created
+
+// let fnc1 = parent(); //---> seperate [[env]]
+// fnc1();
+// fnc1();
+
+// let fnc2 = parent(); //---> seperate [[env]]
+// fnc2();
+// fnc2();
+// fnc2();
+// fnc2();
+// fnc2();
+// fnc2();
+
+// pros and cons:
+// private variables
+//global pollution
