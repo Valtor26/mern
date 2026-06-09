@@ -46,3 +46,59 @@
 
 // let c1 = new Car("Swift","Suzuki","Gray");
 // c1.horn("Peep peep");
+
+//------------------------------------->
+// Extends: nothing but inheritance
+// Super: sending data to parent class constructor from child class
+
+// class User{
+//     constructor(name,age,address){
+//         this.name = name;
+//         this.age = age;
+//         this.address = address;
+//         this.role = "user";
+//     }
+
+//     write(text){
+//         let h1 = document.createElement("h1");
+//         h1.textContent = `${this.name} : ${text}`;
+//         document.body.appendChild(h1);
+//     }
+// }
+
+// class Admin extends User{
+//     constructor(name,age,address){
+//         super(name,age,address);
+//             this.role = "admin";                
+//     }
+//     remove(){
+//         document.querySelectorAll("h1").forEach(function(el){
+//             el.remove();
+//         })
+//     }
+// }
+
+// let u1 = new User("Abhishek",22,"Harihar");
+// let u2 = new User("Vishal",25,"Mumbai");
+// u1.write("hey");
+// u2.write("hello");
+
+// let a1 = new Admin("Deepa",45,"Davanagere");
+
+//----------------------------------------------------------------->
+
+// classical inheritance: the above example is for classical inheritance (class -> class)
+
+// prototypal inheritance: only in js, object inheriting from object
+
+// let coffee = {
+//     color : "dark",
+//     drink : function(){
+//         console.log("gut gut gut");
+//     }
+// }
+
+// let continental = Object.create(coffee); // Object.create() : connects prototype
+// console.log(continental);   
+
+// continental.drink();
