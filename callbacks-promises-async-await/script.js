@@ -71,3 +71,55 @@
 
 //------------------------------------------------------------------------------>
 
+// Promises: 
+
+// a promise consists of 2 states, it can either resolve or reject based on the situation, but we have to write the code for both the states
+
+// A promise consists of 3 states:
+    // 1. Pending 2.Resolved 3.Rejected
+// we will not handle the pending state
+
+// let pm = new Promise(function(res,rej){
+//     setTimeout(() => {
+//         let num = Math.floor(Math.random()*10);
+//         if(num % 2 === 0) res(num);
+//         else rej(num);
+//     }, 3000);
+// })
+
+// pm
+// .then(function(val){
+//     console.log(`Is Even ${val}`);
+// })
+// .catch(function(val){
+//     console.log(`Is Odd ${val}`);
+// })
+
+//------------------------------------------------------------------------->
+
+// async/await: best practice to handle promises i.e .then and .catch
+
+//await: waits for the code
+// try is for resolve and catch is for reject
+
+// let pm = new Promise(function(res,rej){
+//     setTimeout(() => {
+//         let num = Math.floor(Math.random()*10);
+//         if(num > 5) res("Resolved with " + num);
+//         else rej("Rejected with " +num);
+//     }, 1000);
+// })
+
+// async function abcd(){
+//     try{
+//         let val = await pm;
+//         console.log(val);
+//     }
+//     catch(err){ // if promise is rejected it goes to catch as err
+//         console.log(err);
+//     }
+// }
+
+// abcd();
+
+//------------------------------------------------------------------------------------------>
