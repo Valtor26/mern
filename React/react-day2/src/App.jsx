@@ -1,10 +1,18 @@
 import React from "react";
-import Name from "./Name";
+import Card from "./components/Card";
+import PropsCards from "./components/PropsCards";
 
 function App(){
   return(
-    
-    <Name/>
+    <>
+    {/* <Card/>
+    <Card/>
+    <Card/> */}
+    <div className="parent">
+      <PropsCards name="Abhishek"/>
+      <PropsCards name="Vishal" age={25}/>
+    </div>
+    </>
   )
 }
 
