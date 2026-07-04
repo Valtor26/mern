@@ -1,0 +1,95 @@
+git configuration:
+
+git config --global user.name "name" 
+git config --global user.email "email@exp.com"
+
+-------------------------------------------->
+
+Stages:
+
+U - untracked (git is not managing or tracking this file, its a new file)
+A - added or staged (file is ready to be committed)
+C - committed (git is now tracking)
+M - modified (there are changes in committed files)
+--------------------------------------------->
+
+Clone: Cloning a repo on our local machine from remote
+
+git clone <repo-link>
+
+Status: display the state of the code
+
+git status
+
+-------------------------------->
+
+add - adds new or changed files in your working directory to the staging area
+
+commit - it is the record of changed
+
+push - to upload local record content to remote repo to github
+
+--------------------------------------------------->
+initializing git into your local project folder:
+
+init - used to initiate git into your project folder 
+
+git init
+git add "file name"
+git commit -m "message"
+git branch -M main  ---> rename master branch to main
+git remote add origin <remote repo link> --> tell local folder to send every update to this remote location
+git push -u origin main (-u is used to tell that i will be pushing to the same branch on this repo from now -- so next time we can directly use --> git push)
+
+
+
+git remote -v ---> to check which is our current remote repo
+git branch ----> to check which is our branch
+
+------------------------------------------------>
+Branch Commands:
+
+git branch (to check branch)
+
+git branch -M main (to rename branch)
+
+git checkout <branch name> (to change branch to the specified)
+
+git checkout -b <new branch name> (to create a new branch and navigate to it)
+
+git branch -d <branch name> (to delete branch)
+
+------------------------------------>
+Merging:
+
+git diff <branch name> (to compare commits, branches, files & more with the current branch)
+
+git merge <branch name> (to merge the specified branch with the current branch)
+
+---------------------------------------->
+Pull request: it lets yout tell others about changes you've pushed to a branch in a repo on github
+
+used to fetch and download content from a remote repo and immediately update the local repo to match that content
+
+git pull origin main
+
+-------------------------------------->
+Undoing changes:
+
+Case1: staged changes
+
+git reset <file name>
+git reset
+
+Case2: committed changes (for one commit)
+
+git reset HEAD~1
+
+Case3: committed changes (for many commits)
+
+git reset <commit-hash>
+
+git reset --hard <commit-hash>
+
+
+git log ----> to see commit history
