@@ -5,10 +5,5 @@ const router = express.Router();
 
 router.post("/register", authController.registerUser);
 
-router.get("/test", (req, res) => {
-    console.log("Cookies: ", req.cookies);
-    res.json({ message: "Auth route is working", cookies: req.cookies });
-});
-
 
 module.exports = router;
