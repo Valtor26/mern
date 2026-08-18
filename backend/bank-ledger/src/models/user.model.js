@@ -24,16 +24,16 @@ const userSchema = new mongoose.Schema({
     timestamps: true // add createdAt and updatedAt fields
 })
 
-userSchema.pre("save", async function(next){ // run before saving user
+userSchema.pre("save", async function(){ // run before saving user
     if(!this.isModified("password")){ // check if password is modified
-        return next()
+        return 
     }
 
     const hash = await bcrypt.hash(this.password,10) // hash password
 
     this.password = hash // add hash to user
 
-    return next()
+    return 
 })
 
 userSchema.methods.comparePassword = async function(password){ // compare password
