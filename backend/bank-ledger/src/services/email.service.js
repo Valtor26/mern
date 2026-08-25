@@ -50,17 +50,17 @@ async function sendRegistrationEmail(userEmail, name){
 }
 
 async function sendTransactionEmail(userEmail, name, amount, toAccount){
-    const subject = "Transaction Notification";
-    const text = `Hello ${name},\n\nYou have received a transaction of ${amount} from ${toAccount.user.name}.\n\nBest Regards,\nBank Ledger Team`;
-    const html = `<p>Hello ${name},<p></p><p>You have received a transaction of ${amount} from ${toAccount.user.name}.</p><p>Best Regards,<br>Bank Ledger Team</p>`;
+    const subject = "Transaction Successful";
+    const text = `Hello ${name},\n\nYour transaction of $${amount} to account ${toAccount} was successful.\n\nBest Regards,\nBank Ledger Team`;
+    const html = `<p>Hello ${name},</p><p>Your transaction of $${amount} to ${toAccount} was successful.</p><p>Best Regards,<br>Bank Ledger Team</p>`;
 
     await sendEmail(userEmail, subject, text, html);
 }
 
 async function sendTransactionFailureEmail(userEmail, name, amount, toAccount){
     const subject = "Transaction Failed";
-    const text = `Hello ${name},\n\nYour transaction of ${amount} from ${toAccount.user.name} has failed.\n\nBest Regards,\nBank Ledger Team`;
-    const html = `<p>Hello ${name},<p></p><p>Your transaction of ${amount} from ${toAccount.user.name} has failed.</p><p>Best Regards,<br>Bank Ledger Team</p>`;
+    const text = `Hello ${name},\n\nWe regret to inform you that your transaction of $${amount} to account ${toAccount} has failed.\n\nBest Regards,\nBank Ledger Team`;
+    const html = `<p>Hello ${name},</p><p>We regret to inform you that your transaction of $${amount} to ${toAccount} has failed.</p><p>Best Regards,<br>Bank Ledger Team</p>`;
 
     await sendEmail(userEmail, subject, text, html);
 }
