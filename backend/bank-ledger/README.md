@@ -235,9 +235,4 @@ Optional: Containerize the service with Docker, expose port 3000, and orchestrat
 ## License
 Refer to the repository-level license. If none exists, add a license to the project if you intend to open-source it.
 
----
 
-If you'd like, I can also:
-- Add example Postman collection or OpenAPI spec generated from the controllers
-- Add a Dockerfile and docker-compose.yml for local development
-- Add examples of request/response bodies copied verbatim from controllers (I can extract them if you want)
