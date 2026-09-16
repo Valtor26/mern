@@ -40,3 +40,24 @@ export async function registerUser(req, res) {
     });
 
 }
+
+export async function getMe(req, res) {
+    
+    const token = req.headers.authorization.split(" ")[1]; // Extract the token from the Authorization header
+
+    if(!token) {
+        return res.status(401).json({ message: "token is missing" });
+    }
+
+    const decoded = jwt.verify(token, config.JWT_SECRET); // Verify the token
+
+    const user = await userModel.findById(decoded.id); // Find the user with the given id
+
+    res.status(200).json({
+        message: "User fetched successfully",
+        user: {
+            username: user.username,
+            email: user.email
+        }
+    });
+} 
