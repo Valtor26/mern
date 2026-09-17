@@ -28,7 +28,16 @@ export async function registerUser(req, res) {
         password: hashedPassword
     });
 
-    const token = jwt.sign({id: user._id }, config.JWT_SECRET, { expiresIn: "1d" });
+    const accessToken = jwt.sign({id: user._id }, config.JWT_SECRET, { expiresIn: "15m" });
+
+    const refreshToken = jwt.sign({id: user._id }, config.JWT_SECRET, { expiresIn: "7d" });
+
+    res.cookie("refreshToken", refreshToken,{
+        httpOnly: true, // to prevent client side script from reading the cookie
+        secure: true, // to prevent cookie from being accessed by client side script
+        sameSite: "strict",
+        maxAge: 1000 * 60 * 60 * 24 * 7 // 7 days
+    })
 
     res.status(201).json({
         message: "User registered successfully",
@@ -36,7 +45,7 @@ export async function registerUser(req, res) {
             username: user.username,
             email: user.email,
         },
-        token
+        accessToken
     });
 
 }
@@ -61,3 +70,30 @@ export async function getMe(req, res) {
         }
     });
 } 
+
+export async function refreshToken(req, res) {
+
+    const refreshToken = req.cookies.refreshToken; // Get the refresh token from the cookies
+
+    if(!refreshToken) {
+        return res.status(401).json({ message: "refresh token is missing" });
+    }
+
+    const decoded = jwt.verify(refreshToken, config.JWT_SECRET); // Verify the refresh token
+
+    const accessToken = jwt.sign({id: decoded.id }, config.JWT_SECRET, { expiresIn: "15m" }); // Generate a new access token
+
+    const newRefreshToken = jwt.sign({id: decoded.id }, config.JWT_SECRET, { expiresIn: "7d" }); // Generate a new refresh token
+
+    res.cookie("refreshToken", newRefreshToken,{
+        httpOnly: true, // to prevent client side script from reading the cookie
+        secure: true, // to prevent cookie from being accessed by client side script
+        sameSite: "strict",
+        maxAge: 1000 * 60 * 60 * 24 * 7 // 7 days
+    })
+
+    res.status(200).json({
+        message: "Access token refreshed successfully",
+        accessToken
+    })
+}
